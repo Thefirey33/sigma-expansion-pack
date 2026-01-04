@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "sep",
+  "version": "${version}",
+  "name": "sigma expansion pack",
+  "description": "The most brainrotted mod in the west.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/sep/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.thefirey33.sep.client.SepDataGenerator"
+    ],
+    "client": [
+      "net.thefirey33.sep.client.SepClient"
+    ],
+    "main": [
+      "net.thefirey33.sep.Sep"
+    ]
+  },
+  "mixins": [
+    "sep.mixins.json",
+    {
+      "config": "sep.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
