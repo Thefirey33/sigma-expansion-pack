@@ -4,17 +4,32 @@ This is a ***tuff 🥀*** Minecraft Mod, developed in Fabric for Minecraft 1.20.
 
 This mod came from the several ideas from a Voice Chat in the OneShot Discord Server.
 
-> ***ATTENTION:*** The mod is still being worked on.
+> ## ATTENTION!!!
+> Do not use this mod with other mods. This mod changes a lot of the Minecraft code!
+> 
+> This means that you're recommended to only toy around with this mod for fun and not make serious progress twin 🥀
+> 
+> *So yeah, remember: you only have ONE SHOT at your world.*
+
+
+> ## WORK IN PROGRESS:
+> The mod is still being worked on.
 > There are still some ideas left to be worked on:
 > 1. [ ] Sigma Block
-> 2. [ ] Mango Item
-> 3. [ ] Kendrick Lamarr
-> 4. [ ] Tool Changes
-> 5. [ ] Item Changes
-> 6. [ ] Tuff Block Changes
-> 7. [ ] Villager Changes (Currently being worked on)
+> 2. [X] Only Have OneShot (Only One World at a time.)
+> 3. [ ] Mango Item
+> 4. [ ] Kendrick Lamarr
+> 5. [ ] Tool Changes
+> 6. [ ] Item Changes
+> 7. [ ] Tuff Block Changes
+> 8. [ ] Villager Changes
+> 9. [ ] Replace Netherrack with TUFF 🥀
 > 
-> *(imma smash my head against a brick wall as i'm writing this bro)*
+> ***DO NOT FORGET!***
+> 
+> This is a simplified list of stuff being worked on. If you want the full list of ideas, please check them out [here.](readme_sources/tuff_ideas.docx)
+> 
+> If you are contributing to this modpack, please fill out this README file if you are finished with something. 
 
 > ## Minimum-Requirements
 > 
