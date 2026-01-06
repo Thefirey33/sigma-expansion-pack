@@ -1,5 +1,6 @@
 {
-  "gui.sep.play_single": "You only have OneShot.",
+  "gui.sep.play_once": "Play for OneShot",
+  "gui.sep.mod_credits": "Developed by THEFIREY33 and nikodev.\nThis mod's ideas came from the OneShot Discord!\nMinecraft is copyrighted by Mojang.",
   "item.sep.suspicious_substance": "Suspicious Substance",
   "item.sep.raw_sigma": "Raw Sigma",
   "item.sep.sigma_ingot": "Sigma Ingot",
