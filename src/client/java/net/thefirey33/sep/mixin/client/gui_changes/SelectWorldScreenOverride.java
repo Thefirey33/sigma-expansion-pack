@@ -99,16 +99,15 @@ public abstract class SelectWorldScreenOverride extends Screen {
             yOffset += 10;
         }
     }
-    /**
-     * @author Thefirey33
-     * @reason Since there's only going to be one button.
-     */
-    @Overwrite
-    public void render(DrawContext context, int mouseX, int mouseY, float delta){
-        this.renderBackground(context);
-        super.render(context, mouseX, mouseY, delta);
-        renderCreditsWithWrapping(context);
-        TUFFCraftLogoDrawer.draw(context, this.width, 1.0F);
+    @Inject(at = @At("HEAD"), method = "render", cancellable = true)
+    public void render(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci){
+        if (!SepClient.IS_DEVELOPMENT) {
+            this.renderBackground(context);
+            super.render(context, mouseX, mouseY, delta);
+            renderCreditsWithWrapping(context);
+            TUFFCraftLogoDrawer.draw(context, this.width, 1.0F);
+            ci.cancel();
+        }
     }
 
     /**
