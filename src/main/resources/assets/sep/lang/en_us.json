@@ -1,3 +1,7 @@
 {
-  "gui.sep.play_single": "You only have OneShot."
+  "gui.sep.play_single": "You only have OneShot.",
+  "item.sep.suspicious_substance": "Suspicious Substance",
+  "item.sep.raw_sigma": "Raw Sigma",
+  "item.sep.sigma_ingot": "Sigma Ingot",
+  "block.sep.sigma_block": "Sigma Block"
 }

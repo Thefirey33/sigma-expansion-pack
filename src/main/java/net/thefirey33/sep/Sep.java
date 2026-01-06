@@ -10,5 +10,7 @@ public class Sep implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ModItems.initialize();
+        ModBlocks.initialize();
     }
 }
