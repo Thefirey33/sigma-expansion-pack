@@ -126,7 +126,8 @@ public abstract class SelectWorldScreenOverride extends Screen {
 
         @Inject(at = @At("TAIL"), method = "init")
         public void initInjection(CallbackInfo ci){
-            this.createLevel();
+            if (!SepClient.IS_DEVELOPMENT)
+                this.createLevel();
         }
     }
 }
