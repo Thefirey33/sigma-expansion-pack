@@ -1,7 +1,6 @@
 package net.thefirey33.sep.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.thefirey33.sep.client.dialogue_loaders.BeginningGasterLoader;
 
 public class SepClient implements ClientModInitializer {
     public static long WINDOW_HANDLE;
@@ -12,7 +11,7 @@ public class SepClient implements ClientModInitializer {
         turn this flag back OFF!!!
         DO NOT FORGET!
      */
-    public static final Boolean IS_DEVELOPMENT = false;
+    public static final Boolean IS_DEVELOPMENT = true;
 
     @Override
     public void onInitializeClient() {

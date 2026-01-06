@@ -4,5 +4,10 @@
   "item.sep.suspicious_substance": "Suspicious Substance",
   "item.sep.raw_sigma": "Raw Sigma",
   "item.sep.sigma_ingot": "Sigma Ingot",
-  "block.sep.sigma_block": "Sigma Block"
+  "block.sep.sigma_block": "Sigma Block",
+  "item.sep.sigma_axe": "Sigma Axe",
+  "item.sep.sigma_sword": "Sigma Sword",
+  "item.sep.sigma_shovel": "Sigma Shovel",
+  "item.sep.sigma_hoe": "Sigma Hoe",
+  "item.sep.sigma_pickaxe": "Sigma Pickaxe"
 }

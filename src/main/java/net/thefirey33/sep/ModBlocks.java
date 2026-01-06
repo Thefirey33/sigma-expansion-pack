@@ -9,12 +9,20 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
     public static final Block SIGMA_BLOCK = register(
             new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)),
             "sigma_block",
+            true
+    );
+
+    public static final Block SIGMA_ORE = register(
+            new Block(AbstractBlock.Settings.create().
+                    sounds(BlockSoundGroup.NETHER_ORE).hardness(2.5F)),
+            "sigma_ore",
             true
     );
 
@@ -32,8 +40,10 @@ public class ModBlocks {
     }
 
     public static void initialize() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.add(SIGMA_BLOCK.asItem());
-        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) ->
+            itemGroup.add(SIGMA_BLOCK.asItem()));
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register((itemGroup) ->
+            itemGroup.add(SIGMA_ORE.asItem()));
     }
 }
