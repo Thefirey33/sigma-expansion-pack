@@ -36,6 +36,7 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 > - some sanity left
 > - Gradle (9.2.1)
 > - Java (Microsoft OpenJDK 21)
+> - ***Minecraft 1.20.1***
 > 
 > You are recommended to use IntelliJ IDEA to change this mod/make contributions. Other IDEs will work fine,
 > You can use Fabric's IDE Guide [here](https://docs.fabricmc.net/develop/getting-started/setting-up) for the new documentation, 
