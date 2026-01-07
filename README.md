@@ -15,12 +15,12 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 > ## WORK IN PROGRESS:
 > The mod is still being worked on.
 > There are still some ideas left to be worked on:
-> 1. [ ] Sigma Block
+> 1. [X] Sigma Block
 > 2. [X] Only Have OneShot (Only One World at a time.)
 > 3. [ ] Mango Item
 > 4. [ ] Kendrick Lamarr
-> 5. [ ] Tool Changes
-> 6. [ ] Item Changes
+> 5. [X] Tool Changes
+> 6. [X] Item Changes
 > 7. [ ] Tuff Block Changes
 > 8. [ ] Villager Changes
 > 9. [ ] Replace Netherrack with TUFF 🥀
