@@ -6,17 +6,12 @@
 
 package net.thefirey33.sep.mixin.client.gui_changes;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.WindowEventHandler;
 import net.minecraft.client.WindowSettings;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.LogoDrawer;
-import net.minecraft.client.gui.screen.SplashOverlay;
 import net.minecraft.client.util.MonitorTracker;
 import net.minecraft.client.util.Window;
-import net.minecraft.text.Text;
-import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.thefirey33.sep.Sep;
 import net.thefirey33.sep.client.SepClient;
@@ -28,13 +23,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LogoDrawer.class)
 public class BrandingMixin {
-    @Unique
-    private static final String CAPTION = "TUFFCraft Version 6.7";
-
     @Shadow
     public static final Identifier LOGO_TEXTURE = new Identifier(Sep.SEP_MOD_ID, "textures/gui/tuff_craft_logo.png");
     @Shadow
     public static final Identifier EDITION_TEXTURE = new Identifier(Sep.SEP_MOD_ID, "textures/gui/tuff_craft_skibidi_edition.png");
+    @Unique
+    private static final String CAPTION = "TUFFCraft Version 6.7";
 
     @Mixin(Window.class)
     public static class WindowOverride {
@@ -44,14 +38,13 @@ public class BrandingMixin {
         private long handle;
 
         @Inject(at = @At("TAIL"), method = "setTitle")
-        public void setTitle(String title, CallbackInfo ci){
-            GLFW.glfwSetWindowTitle(this.handle, "TUFFCraft Version 6.7 SHAREWARE EDITION");
+        public void setTitle(String title, CallbackInfo ci) {
+            GLFW.glfwSetWindowTitle(this.handle, "TUFFCraft Version 6.7 SHAREWARE EDITION %s".formatted(SepClient.IS_DEVELOPMENT ? "DEVELOPMENT MODE!!!" : ""));
         }
 
 
-
         @Inject(at = @At(value = "INVOKE", target = "Lorg/lwjgl/glfw/GLFW;glfwMakeContextCurrent(J)V"), method = "<init>")
-        public void retrieveWindowHandle(WindowEventHandler eventHandler, MonitorTracker monitorTracker, WindowSettings settings, String videoMode, String title, CallbackInfo ci){
+        public void retrieveWindowHandle(WindowEventHandler eventHandler, MonitorTracker monitorTracker, WindowSettings settings, String videoMode, String title, CallbackInfo ci) {
             Sep.LOGGER.info("Retrieved Window Handle: {}", this.handle);
             SepClient.WINDOW_HANDLE = this.handle;
         }
@@ -61,26 +54,22 @@ public class BrandingMixin {
     @Mixin(LogoDrawer.class)
     public static class LogoDrawerFix {
 
+        @Final
+        @Unique
+        private static final Integer TopLogoHeight = 44;
+        @Unique
+        @Final
+        private static final Integer BottomEditionLogoHeight = 16;
+        @Unique
+        @Final
+        private static final Integer TopLogoWidth = 256;
+        @Unique
+        @Final
+        private static final Integer EditionLogoWidth = TopLogoWidth / 2;
         @Shadow
         @Final
         private boolean ignoreAlpha;
 
-
-        @Final
-        @Unique
-        private static final Integer TopLogoHeight = 44;
-
-        @Unique
-        @Final
-        private static final Integer BottomEditionLogoHeight = 16;
-
-        @Unique
-        @Final
-        private static final Integer TopLogoWidth = 256;
-
-        @Unique
-        @Final
-        private static final Integer EditionLogoWidth = TopLogoWidth / 2;
         /**
          * @author Thefirey33
          * @reason Fix the logo renderer.

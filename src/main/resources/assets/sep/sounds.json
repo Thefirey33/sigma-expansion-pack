@@ -3,5 +3,10 @@
     "sounds": [
       "sep:another_wing_ding"
     ]
+  },
+  "mus_cymbal": {
+    "sounds": [
+      "sep:mus_cymbal"
+    ]
   }
 }

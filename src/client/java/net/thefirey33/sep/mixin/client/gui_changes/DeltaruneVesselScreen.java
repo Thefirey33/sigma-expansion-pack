@@ -38,6 +38,7 @@ public class DeltaruneVesselScreen extends Screen {
     @Unique
     @Final
     private static final Identifier BEGINNING_IMAGE_DEPTH = Identifier.of(Sep.SEP_MOD_ID, "textures/gui/beginning/image_depth.png");
+
     @Unique
     @Final
     private static final Float FINAL_ZOOM = 400.0f;
@@ -64,12 +65,27 @@ public class DeltaruneVesselScreen extends Screen {
 
     @Inject(at = @At("HEAD"), method = "init", cancellable = true)
     public void init(CallbackInfo info) {
-        Sep.LOGGER.info("Overriding Normal Titlescreen!");
+        // Prevent those mfs from not making it ONESHOT.
+        if (SepClient.ALREADY_WORLD_GENERATED) {
+            assert this.client != null;
+            this.client.stop();
+        }
+
+        // Check if we are in the development mode.
+        if (!SepClient.IS_DEVELOPMENT) {
+            Sep.LOGGER.info("Preparing to override the title-screen.");
+        }
+        else {
+            assert this.client != null;
+            this.client.setScreen(new SelectWorldScreen(this));
+        }
         info.cancel();
     }
 
     @Override
     public @Nullable MusicSound getMusic() {
+        if (VesselSelectScreenDialogueManager.TRANSITION_START > 0.0)
+            return null;
         return SepRegistries.WING_DING_GASTER_MM_MUSIC;
     }
 
@@ -113,15 +129,21 @@ public class DeltaruneVesselScreen extends Screen {
         RenderSystem.disableBlend();
     }
 
+    @Unique
+    private static boolean STOP_RENDERING = false;
+
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
     public void render(DrawContext drawContext, int mouseX, int mouseY, float delta, CallbackInfo ci) {
-        this.renderBlackBackground(drawContext);
-        this.renderRepeatingEffectBackground(drawContext, delta);
-        // If the dialogue is over, then display the select.
-        assert this.client != null;
-        if (VesselSelectScreenDialogueManager.DrawDialogueToScreen(textRenderer, this, drawContext, delta) || SepClient.IS_DEVELOPMENT) {
+        if (!STOP_RENDERING) {
+            this.renderBlackBackground(drawContext);
+            this.renderRepeatingEffectBackground(drawContext, delta);
+            // If the dialogue is over, then display the select.
             assert this.client != null;
-            this.client.setScreen(new SelectWorldScreen(this));
+            if (VesselSelectScreenDialogueManager.DrawDialogueToScreen(textRenderer, this, drawContext, delta) || SepClient.IS_DEVELOPMENT) {
+                assert this.client != null;
+                SepClient.CONNECT_TO_CREATED_SERVER = true;
+                STOP_RENDERING = true;
+            }
         }
         ci.cancel();
     }

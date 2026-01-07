@@ -5,13 +5,13 @@
   "compatibilityLevel": "JAVA_17",
   "client": [
     "LanguageManagerOnInitialize",
+    "custom_injections.GenerateWorldFirstMixin",
     "gui_changes.BrandingMixin",
     "gui_changes.BrandingMixin$LogoDrawerFix",
     "gui_changes.BrandingMixin$WindowOverride",
     "gui_changes.DeltaruneVesselScreen",
     "gui_changes.OneShotLogoButton",
-    "gui_changes.SelectWorldScreenOverride",
-    "gui_changes.SelectWorldScreenOverride$CreateWorldScreenOverride"
+    "gui_changes.CreateWorldScreenOverride"
   ],
   "injectors": {
     "defaultRequire": 1
