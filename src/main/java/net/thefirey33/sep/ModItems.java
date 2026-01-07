@@ -32,6 +32,11 @@ public class ModItems {
 
     public static final Item SIGMA_PICKAXE = register(new PickaxeItem(SigmaMaterial.INSTANCE, 2, 0.25F, new FabricItemSettings()), "sigma_pickaxe");
 
+    public static final Item SIGMA_HELMET = register(new ArmorItem(SigmaArmorMaterial.INSTANCE, ArmorItem.Type.HELMET, new Item.Settings()), "sigma_helmet");
+    public static final Item SIGMA_BOOTS= register(new ArmorItem(SigmaArmorMaterial.INSTANCE, ArmorItem.Type.BOOTS, new Item.Settings()), "sigma_boots");
+    public static final Item SIGMA_LEGGINGS = register(new ArmorItem(SigmaArmorMaterial.INSTANCE, ArmorItem.Type.LEGGINGS, new Item.Settings()), "sigma_leggings");
+    public static final Item SIGMA_CHESTPLATE = register(new ArmorItem(SigmaArmorMaterial.INSTANCE, ArmorItem.Type.CHESTPLATE, new Item.Settings()), "sigma_chestplate");
+
     public static Item register(Item item, String id) {
         Identifier itemID = Identifier.of(Sep.SEP_MOD_ID, id);
         return Registry.register(Registries.ITEM, itemID, item);
@@ -51,8 +56,13 @@ public class ModItems {
             itemGroup.add(SIGMA_PICKAXE);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) ->
-            itemGroup.add(SIGMA_SWORD));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register((itemGroup) -> {
+            itemGroup.add(SIGMA_SWORD);
+            itemGroup.add(SIGMA_HELMET);
+            itemGroup.add(SIGMA_CHESTPLATE);
+            itemGroup.add(SIGMA_LEGGINGS);
+            itemGroup.add(SIGMA_BOOTS);
+        });
 
         FuelRegistry.INSTANCE.add(SUSPICIOUS_SUBSTANCE, 60 * 20);
     }

@@ -1,13 +1,18 @@
 {
   "gui.sep.play_once": "Play for OneShot",
   "gui.sep.mod_credits": "Developed by THEFIREY33 and nikodev.\nThis mod's ideas came from the OneShot Discord!\nMinecraft is copyrighted by Mojang.",
-  "item.sep.suspicious_substance": "Suspicious Substance",
+  "item.sep.suspicious_substance": "Lean Dust",
   "item.sep.raw_sigma": "Raw Sigma",
   "item.sep.sigma_ingot": "Sigma Ingot",
   "block.sep.sigma_block": "Sigma Block",
+  "block.sep.sigma_ore": "Sigma Ore",
   "item.sep.sigma_axe": "Sigma Axe",
   "item.sep.sigma_sword": "Sigma Sword",
   "item.sep.sigma_shovel": "Sigma Shovel",
   "item.sep.sigma_hoe": "Sigma Hoe",
-  "item.sep.sigma_pickaxe": "Sigma Pickaxe"
+  "item.sep.sigma_pickaxe": "Sigma Pickaxe",
+  "item.sep.sigma_helmet": "Sigma Helmet",
+  "item.sep.sigma_chestplate": "Sigma Chestplate",
+  "item.sep.sigma_leggings": "Sigma Leggings",
+  "item.sep.sigma_boots": "Sigma Boots"
 }

@@ -3,19 +3,16 @@
   "category": "equipment",
   "pattern": [
     "sss",
-    " / ",
-    " / "
+    "s s",
+    "s s"
   ],
   "key": {
     "s": {
       "item": "sep:sigma_ingot"
-    },
-    "/": {
-      "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "sep:sigma_pickaxe",
+    "item": "sep:sigma_leggings",
     "count": 1
   }
 }

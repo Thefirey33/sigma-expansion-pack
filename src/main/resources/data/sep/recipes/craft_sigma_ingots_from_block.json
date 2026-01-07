@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "sep:sigma_block"
+    }
+  ],
+  "result": {
+    "item": "sep:sigma_ingot",
+    "count": 9
+  }
+}

@@ -2,20 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
+    "s s",
     "sss",
-    " / ",
-    " / "
+    "sss"
   ],
   "key": {
     "s": {
       "item": "sep:sigma_ingot"
-    },
-    "/": {
-      "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "sep:sigma_pickaxe",
+    "item": "sep:sigma_chestplate",
     "count": 1
   }
 }
