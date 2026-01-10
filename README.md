@@ -13,21 +13,8 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 
 
 > ## WORK IN PROGRESS:
-> The mod is still being worked on.
-> There are still some ideas left to be worked on:
-> 1. [X] Sigma Block
-> 2. [X] Only Have OneShot (Only One World at a time.)
-> 3. [ ] Mango Item
-> 4. [ ] Kendrick Lamarr
-> 5. [X] Tool Changes
-> 6. [X] Item Changes
-> 7. [ ] Tuff Block Changes
-> 8. [ ] Villager Changes
-> 9. [ ] Replace Netherrack with TUFF 🥀
-> 
-> ***DO NOT FORGET!***
-> 
-> This is a simplified list of stuff being worked on. If you want the full list of ideas, please check them out [here.](readme_sources/tuff_ideas.docx)
+> The mod is still being worked on. You can checkout the \*.pdf file in readme_sources for more information
+>  [here.](readme_sources/tuff_ideas.pdf)
 > 
 > If you are contributing to this modpack, please fill out this README file if you are finished with something. 
 
@@ -44,6 +31,9 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 
 > ## Wanna know who made the Ideas?
 > 
+> These are all people from the OSDS, or OneShot Discord Server.
+> These are their usernames.
+> 
 > - thefirey33 *(Contributor)*
 > - nikodev *(Contributor)*
 > - karll4204
@@ -53,5 +43,6 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 > - friedchickeneater400
 > - Vivian
 > - Mars (Ralph)
+> - Sleepy
 > 
-> Thanks for providing all these ideas. This mod is already rotted enough as it is.
+> Thanks for providing all these ideas. This mod is already rotted enough as it is. 🙏

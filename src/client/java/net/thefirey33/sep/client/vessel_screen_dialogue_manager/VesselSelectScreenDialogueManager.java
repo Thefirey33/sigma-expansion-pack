@@ -15,12 +15,17 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.sound.AbstractSoundInstance;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.client.sound.SoundManager;
+import net.minecraft.client.util.Window;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.LocalRandom;
+import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.client.SepClient;
 import net.thefirey33.sep.registries.ModSounds;
 import net.thefirey33.sep.client.dialogue_loaders.BeginningGasterLoader;
+import org.lwjgl.glfw.GLFW;
+import org.spongepowered.asm.mixin.Unique;
 
 // This class was added because the variable list in the actual DeltaruneVesselSelectScreen was getting huge.
 public class VesselSelectScreenDialogueManager {
@@ -84,7 +89,8 @@ public class VesselSelectScreenDialogueManager {
         CurrentDialogueTicker = 0.0F;
         OpacityOfText = 1.0F;
     }
-
+    public static int WindowPositionX;
+    public static int WindowPositionY;
     /**
      * Attempt to draw to the screen.
      * @param textRenderer The text renderer in-context.
@@ -110,17 +116,24 @@ public class VesselSelectScreenDialogueManager {
             // Start playing the transition sound when the value is 0.0.
             if (TRANSITION_START <= 0.0) {
                 soundManager.play(TRANSITION_INSTANCE);
+
+                Window window = MinecraftClient.getInstance().getWindow();
+                WindowPositionX = window.getX();
+                WindowPositionY = window.getY();
                 minecraftClient.getMusicTracker().stop();
             }
 
+            GLFW.glfwSetWindowPos(SepClient.WINDOW_HANDLE, WindowPositionX + (int) (Math.random() * (TRANSITION_START * 100)), WindowPositionY + (int) (Math.random() * (TRANSITION_START * 100)));
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, TRANSITION_START);
             RenderSystem.enableBlend();
             drawContext.fill(0, 0, currentScreenInstance.width, currentScreenInstance.height, Colors.WHITE);
             RenderSystem.disableBlend();
 
             // Check if the transition sound has stopped playing.
-            if (!soundManager.isPlaying(TRANSITION_INSTANCE))
+            if (!soundManager.isPlaying(TRANSITION_INSTANCE)) {
+                GLFW.glfwSetWindowPos(SepClient.WINDOW_HANDLE, WindowPositionX, WindowPositionY);
                 return true;
+            }
 
             TRANSITION_START += deltaTime * TRANSITION_SPEED;
         } else {

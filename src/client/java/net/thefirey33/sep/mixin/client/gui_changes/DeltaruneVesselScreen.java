@@ -70,7 +70,6 @@ public class DeltaruneVesselScreen extends Screen {
             assert this.client != null;
             this.client.stop();
         }
-
         // Check if we are in the development mode.
         if (!SepClient.IS_DEVELOPMENT) {
             Sep.LOGGER.info("Preparing to override the title-screen.");

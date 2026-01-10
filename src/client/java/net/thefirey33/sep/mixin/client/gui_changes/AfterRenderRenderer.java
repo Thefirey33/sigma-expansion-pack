@@ -57,9 +57,9 @@ public class AfterRenderRenderer {
             RenderSystem.enableBlend();
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 0.5F);
             drawContext.drawTexture(EYE_OF_RAH, 0, 0, widthScreen, heightScreen, (float) Math.random() * SHAKE_AMOUNT, (float) Math.random() * SHAKE_AMOUNT, widthScreen, heightScreen, widthScreen, heightScreen);
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.disableBlend();
         }
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         matrixStack.loadIdentity();
     }
 }
