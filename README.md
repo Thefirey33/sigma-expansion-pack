@@ -7,9 +7,9 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 > ## ATTENTION!!!
 > Do not use this mod with other mods. This mod changes a lot of the Minecraft code!
 > 
-> This means that you're recommended to only toy around with this mod for fun and not make serious progress twin 🥀
+> ***ALSO, THIS MOD DELETES YOUR OLD SAVES. DO NOT USE THIS MOD AS A DAILY-MINECRAFT MOD. YOU WILL CRASH OUT LIKE KRIS DREEMURR AND KICK A BIN AROUND.***
 > 
-> *So yeah, remember: you only have ONE SHOT at your world.*
+> ***DO NOT FORGET! YOU ARE UNEMPLOYED AS HELL, IF YOU PLAY THIS.***
 
 
 > ## WORK IN PROGRESS:
@@ -36,7 +36,7 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 > 
 > - thefirey33 *(Contributor)*
 > - nikodev *(Contributor)*
-> - karll4204
+> - karll0424
 > - The World Machine
 > - Solar [Niko_Solar]
 > - Cuddles (Coodles)
