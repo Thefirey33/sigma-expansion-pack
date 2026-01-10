@@ -8,5 +8,17 @@
     "sounds": [
       "sep:mus_cymbal"
     ]
+  },
+  "tung_hit": {
+    "sounds": [
+      "sep:tung_hit_1",
+      "sep:tung_hit_2",
+      "sep:tung_hit_3"
+    ]
+  },
+  "ibaerie": {
+    "sounds": [
+      "sep:ibaerie"
+    ]
   }
 }

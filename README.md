@@ -44,5 +44,14 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 
 > ## Wanna know who made the Ideas?
 > 
-> Each new addition's \*.java file will have the original idea holder added into the top
-> as a comment. ***So, you can know our skibidi ohio minds who made this possible.***
+> - thefirey33 *(Contributor)*
+> - nikodev *(Contributor)*
+> - karll4204
+> - The World Machine
+> - Solar [Niko_Solar]
+> - Cuddles (Coodles)
+> - friedchickeneater400
+> - Vivian
+> - Mars (Ralph)
+> 
+> Thanks for providing all these ideas. This mod is already rotted enough as it is.

@@ -1,10 +1,17 @@
-package net.thefirey33.sep;
+/**
+ * IDEA By: nikodev
+ * Sigma ARMOR / TOOLS
+ */
+
+
+package net.thefirey33.sep.materials;
 
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.thefirey33.sep.registries.ModItems;
 
 public class SigmaArmorMaterial implements ArmorMaterial {
     public static final SigmaArmorMaterial INSTANCE = new SigmaArmorMaterial();

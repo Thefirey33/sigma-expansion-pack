@@ -1,7 +1,14 @@
-package net.thefirey33.sep;
+/**
+ * IDEA By: nikodev
+ * Sigma ARMOR / TOOLS
+ */
+
+
+package net.thefirey33.sep.materials;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.thefirey33.sep.registries.ModItems;
 
 public class SigmaMaterial implements ToolMaterial {
     public static final SigmaMaterial INSTANCE = new SigmaMaterial();

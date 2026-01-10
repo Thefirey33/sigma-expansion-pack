@@ -19,7 +19,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.LocalRandom;
-import net.thefirey33.sep.SepRegistries;
+import net.thefirey33.sep.registries.ModSounds;
 import net.thefirey33.sep.client.dialogue_loaders.BeginningGasterLoader;
 
 // This class was added because the variable list in the actual DeltaruneVesselSelectScreen was getting huge.
@@ -44,10 +44,10 @@ public class VesselSelectScreenDialogueManager {
      * How many characters in off-set before the next line of dialogue.
      */
     public static final Integer DIALOGUE_OFFSET = 20;
-    public static final SoundInstance TRANSITION_INSTANCE = new AbstractSoundInstance(SepRegistries.MUS_CYMBAL_IDENTIFIER, SoundCategory.MASTER, new LocalRandom(100)) {
+    public static final SoundInstance TRANSITION_INSTANCE = new AbstractSoundInstance(ModSounds.MUS_CYMBAL_IDENTIFIER, SoundCategory.MASTER, new LocalRandom(100)) {
         @Override
         public Identifier getId() {
-            return SepRegistries.MUS_CYMBAL_IDENTIFIER;
+            return ModSounds.MUS_CYMBAL_IDENTIFIER;
         }
     };
     /**

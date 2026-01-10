@@ -1,6 +1,12 @@
 package net.thefirey33.sep.client;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketSender;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.network.PacketByteBuf;
+import net.thefirey33.sep.Sep;
 
 import java.net.SocketAddress;
 
@@ -11,7 +17,10 @@ public class SepClient implements ClientModInitializer {
      * turn this flag back OFF!!!
      * DO NOT FORGET!
      */
-    public static final Boolean IS_DEVELOPMENT = false;
+    public static final Boolean IS_DEVELOPMENT = true;
+    /**
+     * The Window Handle to use.
+     */
     public static long WINDOW_HANDLE;
     /**
      * The server address to connect to (IntegratedServer).
@@ -27,6 +36,10 @@ public class SepClient implements ClientModInitializer {
      * even though it's ONESHOT only.
      */
     public static Boolean ALREADY_WORLD_GENERATED = false;
+    /**
+     * the deltatime value.
+     */
+    public static float DELTA_TIME = 0.0f;
 
     @Override
     public void onInitializeClient() {

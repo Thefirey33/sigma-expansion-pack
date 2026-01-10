@@ -1,4 +1,10 @@
-package net.thefirey33.sep;
+/**
+ * IDEA By: nikodev
+ * Sigma ARMOR / TOOLS / BLOCKS
+ */
+
+
+package net.thefirey33.sep.registries;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -11,6 +17,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.thefirey33.sep.Sep;
 
 public class ModBlocks {
     public static final Block SIGMA_BLOCK = register(
@@ -21,7 +28,7 @@ public class ModBlocks {
 
     public static final Block SIGMA_ORE = register(
             new Block(AbstractBlock.Settings.create().
-                    sounds(BlockSoundGroup.NETHER_ORE).hardness(2.5F)),
+                    sounds(BlockSoundGroup.NETHER_ORE).hardness(Blocks.OBSIDIAN.getHardness())), // IDEA by karl -> Obsidian Hardness
             "sigma_ore",
             true
     );
@@ -29,8 +36,6 @@ public class ModBlocks {
     public static Block register(Block block, String name, boolean shouldRegisterItem) {
         Identifier id = new Identifier(Sep.SEP_MOD_ID, name);
 
-        // Sometimes, you may not want to register an item for the block.
-        // Eg: if it's a technical block like `minecraft:air` or `minecraft:end_gateway`
         if (shouldRegisterItem) {
             BlockItem blockItem = new BlockItem(block, new Item.Settings());
             Registry.register(Registries.ITEM, id, blockItem);

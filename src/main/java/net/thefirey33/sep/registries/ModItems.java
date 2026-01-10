@@ -1,4 +1,4 @@
-package net.thefirey33.sep;
+package net.thefirey33.sep.registries;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -10,6 +10,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.materials.SigmaArmorMaterial;
+import net.thefirey33.sep.materials.SigmaMaterial;
 
 public class ModItems {
     private static final FoodComponent SUSPICIOUS_FOOD_COMPONENT = new FoodComponent.Builder().snack().statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 60 * 20), 1.0f).build();

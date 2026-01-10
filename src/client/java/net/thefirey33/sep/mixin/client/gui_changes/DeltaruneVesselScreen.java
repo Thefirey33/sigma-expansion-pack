@@ -18,7 +18,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.thefirey33.sep.Sep;
-import net.thefirey33.sep.SepRegistries;
+import net.thefirey33.sep.registries.ModSounds;
 import net.thefirey33.sep.client.SepClient;
 import net.thefirey33.sep.client.vessel_screen_dialogue_manager.VesselSelectScreenDialogueManager;
 import org.jetbrains.annotations.Nullable;
@@ -86,7 +86,7 @@ public class DeltaruneVesselScreen extends Screen {
     public @Nullable MusicSound getMusic() {
         if (VesselSelectScreenDialogueManager.TRANSITION_START > 0.0)
             return null;
-        return SepRegistries.WING_DING_GASTER_MM_MUSIC;
+        return ModSounds.WING_DING_GASTER_MM_MUSIC;
     }
 
     @Unique
