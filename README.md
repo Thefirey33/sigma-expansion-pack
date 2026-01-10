@@ -1,4 +1,4 @@
-![logo_mod.png](readme_sources/logo_mod.png)
+![sigma_expansion_pack.png](readme_sources/sigma_expansion_pack.png)
 
 This is a ***tuff 🥀*** Minecraft Mod, developed in Fabric for Minecraft 1.20.1. 
 
