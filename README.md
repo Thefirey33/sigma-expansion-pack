@@ -4,6 +4,19 @@ This is a ***tuff 🥀*** Minecraft Mod, developed in Fabric for Minecraft 1.20.
 
 This mod came from the several ideas from a Voice Chat in the OneShot Discord Server.
 
+> # Special Thanks...
+> 1. To nikodev, for being a contributor.
+> 2. To Solar [ Niko ], for creating the story and giving the mod a sense of direction.
+> 3. To everyone else involved, that came up with all the ideas.
+> 
+> If you have an idea and want to submit it, unfortunately... The mod has gained direction, and you missed the bus...
+> But, you still have the chance to PLAY IT, when it's done or... even better. Clone it and extend it.
+> It's all up to you.
+> 
+> ## THANK YOU!
+> 
+> Thefirey33
+
 > ## ATTENTION!!!
 > Do not use this mod with other mods. This mod changes a lot of the Minecraft code!
 > 
@@ -14,13 +27,16 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 
 > ## WORK IN PROGRESS:
 > The mod is still being worked on. You can checkout the \*.pdf file in readme_sources for more information
->  [here.](readme_sources/tuff_ideas.pdf)
+>  [here.](readme_sources/tuff_ideas.pdf) Any highligted idea, is a finished one.
+> 
+> Current Mod State: **NOT FINISHED** (10+ ideas still need work)
 > 
 > If you are contributing to this modpack, please fill out this README file if you are finished with something. 
 
 > ## Minimum-Requirements
 > 
 > - some sanity left
+> - **...willpower.**
 > - Gradle (9.2.1)
 > - Java (Microsoft OpenJDK 21)
 > - ***Minecraft 1.20.1***
