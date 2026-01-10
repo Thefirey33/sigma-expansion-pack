@@ -18,6 +18,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.client.HelperFunctions;
 import net.thefirey33.sep.registries.ModSounds;
 import net.thefirey33.sep.client.SepClient;
 import net.thefirey33.sep.client.vessel_screen_dialogue_manager.VesselSelectScreenDialogueManager;
@@ -114,9 +115,13 @@ public class DeltaruneVesselScreen extends Screen {
                     this.width + iCalc2,
                     this.height + iCalc2);
             RepeatingBackgroundEffect.set(i, aFloat + delta * 5);
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+            HelperFunctions.SetOpacity(1.0F);
         }
         if (RepeatingBackgroundEffect.size() > MAXIMUM_PERMITTED_BACKGROUNDS)
+            // SHUT YO BITCH-ASS UP LINTER
+            // WE CANNOT USE IT
+            // SO HANDLE IT
+            //noinspection SequencedCollectionMethodCanBeUsed
             RepeatingBackgroundEffect.remove(0);
 
         TICKS += delta;

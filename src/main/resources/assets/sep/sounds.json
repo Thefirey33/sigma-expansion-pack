@@ -20,5 +20,35 @@
     "sounds": [
       "sep:ibaerie"
     ]
+  },
+  "f_intro": {
+    "sounds": [
+      "sep:flowey/mus_f_intro"
+    ]
+  },
+  "f_alarm": {
+    "sounds": [
+      "sep:flowey/mus_f_alarm"
+    ]
+  },
+  "f_part1": {
+    "sounds": [
+      "sep:flowey/mus_f_part1"
+    ]
+  },
+  "f_part2": {
+    "sounds": [
+      "sep:flowey/mus_f_part2"
+    ]
+  },
+  "f_part3": {
+    "sounds": [
+      "sep:flowey/mus_f_part3"
+    ]
+  },
+  "relaxing_song": {
+    "sounds": [
+      "sep:relaxing_song"
+    ]
   }
 }

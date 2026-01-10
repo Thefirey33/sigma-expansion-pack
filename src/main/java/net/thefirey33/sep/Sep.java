@@ -25,10 +25,22 @@ import java.io.InputStream;
 
 public class Sep implements ModInitializer {
     public static final String SEP_MOD_ID = "sep";
+    /**
+     * Mod logger.
+     */
     public static final Logger LOGGER = LoggerFactory.getLogger(Sep.class);
+    /**
+     * Sigma Ore generation key.
+     */
     public static final RegistryKey<PlacedFeature> SIGMA_ORE_FEATURE_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of("sep", "sigma_ore_gen"));
+    /**
+     * When someone holds the sigma block, when they "sigma", it gives them diamonds with a rate-limit.
+     */
     public static final DiamondIdeaController DIAMOND_IDEA_CONTROLLER;
-    public static final Identifier COOL_TRANSITION_PACKET = Identifier.of(SEP_MOD_ID, "cool_trans");
+    /**
+     * This is the identifier for the testing texture.
+     */
+    public static final Identifier TEXTURE_TEST_IDENTIFIER = Identifier.of(SEP_MOD_ID, "texture_test.png");
 
     @Override
     public void onInitialize() {
@@ -39,7 +51,7 @@ public class Sep implements ModInitializer {
             We all know that C# is always called Microsoft Java,
             but is it really?
 
-            C# has always improved from Java, even more so..
+            C# has always improved from Java, even more so...
             And Oracle, on their lazy asses, haven't done anything to improve Java.
             Why do we need AtomicReferences everywhere?
             Why can't switch statements have type checks?

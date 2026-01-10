@@ -15,6 +15,7 @@ import net.minecraft.client.util.Window;
 import net.minecraft.util.Identifier;
 import net.thefirey33.sep.Sep;
 import net.thefirey33.sep.client.SepClient;
+import net.thefirey33.sep.client.flowey.FloweyBossFightScreen;
 import org.lwjgl.glfw.GLFW;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
@@ -39,7 +40,7 @@ public class BrandingMixin {
 
         @Inject(at = @At("TAIL"), method = "setTitle")
         public void setTitle(String title, CallbackInfo ci) {
-            GLFW.glfwSetWindowTitle(this.handle, "TUFFCraft Version 6.7 SHAREWARE EDITION %s".formatted(SepClient.IS_DEVELOPMENT ? "DEVELOPMENT MODE!!!" : ""));
+            GLFW.glfwSetWindowTitle(this.handle, FloweyBossFightScreen.IS_FINAL_BOSSFIGHT ? "Floweycraft" : "TUFFCraft Version 6.7 SHAREWARE EDITION %s".formatted(SepClient.IS_DEVELOPMENT ? "DEVELOPMENT MODE!!!" : ""));
         }
 
 

@@ -1,7 +1,7 @@
 {
   "gui.sep.play_once": "Play for OneShot",
   "msg.sep.rate_limit": "TWIN, YOU CANNOT SPAM THIS SHITE.",
-  "gui.sep.is_development": "Do not attempt to build a *.jar file. In Developer Mode",
+  "gui.sep.is_development": "Do not attempt to build a *.jar file. Use F1 to test the flowey battle.",
   "gui.sep.mod_credits": "Developed by THEFIREY33 and nikodev.\nThis mod's ideas came from the OneShot Discord!\nMinecraft is copyrighted by Mojang.",
   "item.sep.suspicious_substance": "Lean Dust",
   "item.sep.raw_sigma": "Raw Sigma",

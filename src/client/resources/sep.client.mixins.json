@@ -7,6 +7,8 @@
     "LanguageManagerOnInitialize",
     "custom_injections.GenerateWorldFirstMixin",
     "custom_injections.TripleTInjection",
+    "custom_injections.GameRendererInjection",
+    "gui_changes.AfterRenderRenderer",
     "gui_changes.BrandingMixin",
     "gui_changes.BrandingMixin$LogoDrawerFix",
     "gui_changes.BrandingMixin$WindowOverride",
@@ -15,7 +17,6 @@
     "gui_changes.OneShotLogoButton",
     "gui_changes.SixtySevenTooltipInjection",
     "gui_changes.SixtySevenTooltipInjection$ScreenInjection",
-    "gui_changes.AfterRenderRenderer",
     "gui_changes.VillagerEgyptOverride"
   ],
   "injectors": {

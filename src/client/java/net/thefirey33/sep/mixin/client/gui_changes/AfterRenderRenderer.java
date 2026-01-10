@@ -10,9 +10,9 @@ import net.minecraft.client.sound.SoundManager;
 import net.minecraft.client.util.Window;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
-import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.client.HelperFunctions;
 import net.thefirey33.sep.client.SepClient;
 import net.thefirey33.sep.client.SoundInstances;
 import org.spongepowered.asm.mixin.Final;
@@ -43,10 +43,7 @@ public class AfterRenderRenderer {
         if (SepClient.IS_DEVELOPMENT) {
             TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
             Text textContainer = Text.translatable("gui.sep.is_development");
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 0.5F);
-            drawContext.fill(0, 0, textRenderer.getWidth(textContainer), textRenderer.fontHeight, Colors.BLACK);
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-            drawContext.drawText(textRenderer, textContainer, 0, 0, Colors.RED, true);
+            HelperFunctions.DrawDeveloperWarningText(textRenderer, drawContext, textContainer);
         }
 
         SoundManager soundManager = this.client.getSoundManager();
@@ -55,11 +52,11 @@ public class AfterRenderRenderer {
         if (soundManager.isPlaying(SoundInstances.PROPERTY_OF_EGYPT_INSTANCE))
         {
             RenderSystem.enableBlend();
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 0.5F);
+            HelperFunctions.SetOpacity(0.5F);
             drawContext.drawTexture(EYE_OF_RAH, 0, 0, widthScreen, heightScreen, (float) Math.random() * SHAKE_AMOUNT, (float) Math.random() * SHAKE_AMOUNT, widthScreen, heightScreen, widthScreen, heightScreen);
             RenderSystem.disableBlend();
         }
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        HelperFunctions.SetOpacity(1.0F);
         matrixStack.loadIdentity();
     }
 }

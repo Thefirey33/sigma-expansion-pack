@@ -15,5 +15,6 @@ public class ModSounds {
     public static final MusicSound WING_DING_GASTER_MM_MUSIC = new MusicSound(WING_DING_GASTER_MM_ENTRY, 0, 192, true);
     // The Tung Hit Sound.
     public static final SoundEvent TUNG_HIT = SoundEvent.of(Identifier.of(Sep.SEP_MOD_ID, "tung_hit"));
-    public static final SoundEvent EGYPT = SoundEvent.of(Identifier.of(Sep.SEP_MOD_ID, "ibaerie"));
+    public static final Identifier RELAXING_SONG_IDENTIFIER = Identifier.of(Sep.SEP_MOD_ID, "relaxing_song");
+    public static final SoundEvent RELAXING_SONG = SoundEvent.of(RELAXING_SONG_IDENTIFIER);
 }

@@ -7,6 +7,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.PacketByteBuf;
 import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.client.network_manager.NetworkEventHandler;
 
 import java.net.SocketAddress;
 
@@ -43,7 +44,7 @@ public class SepClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-
+        NetworkEventHandler.Register();
     }
 
 }
