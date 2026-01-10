@@ -38,7 +38,7 @@ This mod came from the several ideas from a Voice Chat in the OneShot Discord Se
 > - nikodev *(Contributor)*
 > - karll0424
 > - The World Machine
-> - Solar [Niko_Solar]
+> - Solar [Niko_Solar] ***(the only serious one)***
 > - Cuddles (Coodles)
 > - friedchickeneater400
 > - Vivian
