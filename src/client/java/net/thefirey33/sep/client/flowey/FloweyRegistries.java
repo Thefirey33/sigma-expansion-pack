@@ -8,8 +8,12 @@ import net.thefirey33.sep.client.HelperFunctions;
 import net.thefirey33.sep.client.SepClient;
 import org.lwjgl.glfw.GLFW;
 
+import java.util.ArrayList;
+
 public class FloweyRegistries {
     public static final Identifier PLAYER_SOUL = register("player_soul.png");
+
+    public static ArrayList<Integer> KEYS = new ArrayList<>();
 
     /**
      * Register the specified identifier.
@@ -52,7 +56,7 @@ public class FloweyRegistries {
         private int y = 0;
 
         public boolean keyboardPressWrapper(int keycode){
-            return GLFW.glfwGetKey(SepClient.WINDOW_HANDLE, keycode) == GLFW.GLFW_PRESS;
+            return KEYS.contains(keycode);
         }
 
         public float getAxis(int positiveAxis, int negativeAxis)

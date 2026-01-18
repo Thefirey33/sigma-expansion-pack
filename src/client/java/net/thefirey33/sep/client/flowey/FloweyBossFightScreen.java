@@ -6,6 +6,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Window;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
+import net.thefirey33.sep.Sep;
 
 /*
     TODO:
@@ -31,7 +32,15 @@ public class FloweyBossFightScreen extends Screen
 
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if (!FloweyRegistries.KEYS.contains(keyCode))
+            FloweyRegistries.KEYS.add(keyCode);
         return super.keyPressed(keyCode, scanCode, modifiers);
+    }
+
+    @Override
+    public boolean keyReleased(int keyCode, int scanCode, int modifiers) {
+        FloweyRegistries.KEYS.removeIf(key -> key == keyCode);
+        return super.keyReleased(keyCode, scanCode, modifiers);
     }
 
     @Override
