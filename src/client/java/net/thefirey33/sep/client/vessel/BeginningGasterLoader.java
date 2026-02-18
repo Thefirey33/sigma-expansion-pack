@@ -4,13 +4,14 @@
  */
 
 
-package net.thefirey33.sep.client.dialogue_loaders;
+package net.thefirey33.sep.client.vessel;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.Language;
 import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.SepGlobalConstants;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -31,7 +32,7 @@ public class BeginningGasterLoader {
         // Pre-Init of the loader.
         ClassLoader loader = Sep.class.getClassLoader();
         LANGUAGE_REFERENCE = minecraftClient.getLanguageManager().getLanguage();
-        Sep.LOGGER.info("Loading {}... USING LANGUAGE: {}", DIALOGUE_REFERENCE, LANGUAGE_REFERENCE);
+        SepGlobalConstants.LOGGER.info("Loading {}... USING LANGUAGE: {}", DIALOGUE_REFERENCE, LANGUAGE_REFERENCE);
         // Try to load the file, if it doesn't work, throw a runtime exception.
         try (InputStream gasterDialogueSpeechLoader = loader.getResourceAsStream(DIALOGUE_REFERENCE))
         {
@@ -40,7 +41,7 @@ public class BeginningGasterLoader {
             Gson googleJsonReader = new Gson();
             // Load the dialogue from the input stream, then put it into Gson.
             String readJsonData = new String(gasterDialogueSpeechLoader.readAllBytes(), StandardCharsets.UTF_8);
-            Sep.LOGGER.info("Loaded Gaster Dialogue: {}", readJsonData);
+            SepGlobalConstants.LOGGER.info("Loaded Gaster Dialogue: {}", readJsonData);
             TypeToken<Map<String, List<String>>> jsonReaderTypeToken = new TypeToken<>() {
             };
             Map<String, List<String>> readData = googleJsonReader.fromJson(readJsonData, jsonReaderTypeToken);

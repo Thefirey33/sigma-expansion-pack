@@ -11,7 +11,7 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
-import net.thefirey33.sep.client.SepClient;
+import net.thefirey33.sep.client.SepGlobalClientConstants;
 
 /**
  * The Dummy Screen.
@@ -29,7 +29,7 @@ public class DummyScreen extends Screen {
 
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        SepClient.CONNECT_TO_CREATED_SERVER = true;
+        SepGlobalClientConstants.CONNECT_TO_CREATED_SERVER = true;
         return true;
     }
 }

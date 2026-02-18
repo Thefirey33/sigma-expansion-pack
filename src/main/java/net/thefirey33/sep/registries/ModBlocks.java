@@ -17,7 +17,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.SepGlobalConstants;
 
 public class ModBlocks {
     public static final Block SIGMA_BLOCK = register(
@@ -34,7 +34,7 @@ public class ModBlocks {
     );
 
     public static Block register(Block block, String name, boolean shouldRegisterItem) {
-        Identifier id = new Identifier(Sep.SEP_MOD_ID, name);
+        Identifier id = new Identifier(SepGlobalConstants.SEP_MOD_ID, name);
 
         if (shouldRegisterItem) {
             BlockItem blockItem = new BlockItem(block, new Item.Settings());

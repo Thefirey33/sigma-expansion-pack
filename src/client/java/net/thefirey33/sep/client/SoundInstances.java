@@ -7,11 +7,11 @@ import net.minecraft.sound.MusicSound;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.LocalRandom;
-import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.SepGlobalConstants;
 import net.thefirey33.sep.registries.ModSounds;
 
 public class SoundInstances {
-    public static final Identifier PROPERTY_OF_EGYPT_IDENTIFIER = Identifier.of(Sep.SEP_MOD_ID, "ibaerie");
+    public static final Identifier PROPERTY_OF_EGYPT_IDENTIFIER = Identifier.of(SepGlobalConstants.SEP_MOD_ID, "ibaerie");
     public static final SoundInstance PROPERTY_OF_EGYPT_INSTANCE = new AbstractSoundInstance(PROPERTY_OF_EGYPT_IDENTIFIER, SoundCategory.MASTER, new LocalRandom(1000)) {
         @Override
         public Identifier getId() {

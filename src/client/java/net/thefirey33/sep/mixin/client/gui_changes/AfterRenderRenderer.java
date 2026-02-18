@@ -11,9 +11,9 @@ import net.minecraft.client.util.Window;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.client.SepGlobalClientConstants;
+import net.thefirey33.sep.SepGlobalConstants;
 import net.thefirey33.sep.client.HelperFunctions;
-import net.thefirey33.sep.client.SepClient;
 import net.thefirey33.sep.client.SoundInstances;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,7 +31,7 @@ public class AfterRenderRenderer {
     MinecraftClient client;
 
     @Unique
-    private static final Identifier EYE_OF_RAH = Identifier.of(Sep.SEP_MOD_ID, "textures/gui/eye_of_rah.png");
+    private static final Identifier EYE_OF_RAH = Identifier.of(SepGlobalConstants.SEP_MOD_ID, "textures/gui/eye_of_rah.png");
 
     @Unique
     private static final Integer SHAKE_AMOUNT = 5;
@@ -40,7 +40,7 @@ public class AfterRenderRenderer {
     public void renderInjection(float tickDelta, long startTime, boolean tick, CallbackInfo ci, @Local DrawContext drawContext) {
         MatrixStack matrixStack = drawContext.getMatrices();
         matrixStack.translate(0.0F, 0.0F, 400.0F);
-        if (SepClient.IS_DEVELOPMENT) {
+        if (SepGlobalClientConstants.IS_DEVELOPMENT) {
             TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
             Text textContainer = Text.translatable("gui.sep.is_development");
             HelperFunctions.DrawDeveloperWarningText(textRenderer, drawContext, textContainer);

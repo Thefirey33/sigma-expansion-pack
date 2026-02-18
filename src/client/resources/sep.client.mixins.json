@@ -6,18 +6,17 @@
   "client": [
     "LanguageManagerOnInitialize",
     "custom_injections.GenerateWorldFirstMixin",
-    "custom_injections.TripleTInjection",
-    "custom_injections.GameRendererInjection",
+    "custom_injections.WeightChangedPlayerRenderer",
     "gui_changes.AfterRenderRenderer",
     "gui_changes.BrandingMixin",
     "gui_changes.BrandingMixin$LogoDrawerFix",
     "gui_changes.BrandingMixin$WindowOverride",
     "gui_changes.CreateWorldScreenOverride",
     "gui_changes.DeltaruneVesselScreen",
-    "gui_changes.OneShotLogoButton",
-    "gui_changes.SixtySevenTooltipInjection",
-    "gui_changes.SixtySevenTooltipInjection$ScreenInjection",
-    "gui_changes.VillagerEgyptOverride"
+    "minecraft_asset_overrides.SixtySevenTooltipInjection",
+    "minecraft_asset_overrides.SixtySevenTooltipInjection$ScreenInjection",
+    "minecraft_asset_overrides.TripleTInjection",
+    "minecraft_asset_overrides.VillagerEgyptOverride"
   ],
   "injectors": {
     "defaultRequire": 1

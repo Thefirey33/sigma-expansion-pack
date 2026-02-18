@@ -56,7 +56,7 @@ public class HelperFunctions {
     public static int LatestKeyPressed = 0;
 
     public static boolean isKeyPressed(int key){
-        int result = GLFW.glfwGetKey(SepClient.WINDOW_HANDLE, key);
+        int result = GLFW.glfwGetKey(SepGlobalClientConstants.WINDOW_HANDLE, key);
         if (result == GLFW.GLFW_PRESS && key != LatestKeyPressed)
         {
             LatestKeyPressed = key;

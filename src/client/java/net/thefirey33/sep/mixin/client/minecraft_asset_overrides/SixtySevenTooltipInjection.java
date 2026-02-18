@@ -1,4 +1,4 @@
-package net.thefirey33.sep.mixin.client.gui_changes;
+package net.thefirey33.sep.mixin.client.minecraft_asset_overrides;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -12,8 +12,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
-import net.thefirey33.sep.Sep;
-import net.thefirey33.sep.client.SepClient;
+import net.thefirey33.sep.client.SepGlobalClientConstants;
+import net.thefirey33.sep.SepGlobalConstants;
 import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
@@ -52,7 +52,7 @@ public abstract class SixtySevenTooltipInjection {
     }
 
     @Unique
-    private static final Identifier KID_67_IDENTIFIER = Identifier.of(Sep.SEP_MOD_ID, "textures/gui/kid_67.png");
+    private static final Identifier KID_67_IDENTIFIER = Identifier.of(SepGlobalConstants.SEP_MOD_ID, "textures/gui/kid_67.png");
     @Unique
     private static final Float OFFSET = 4000.0F;
     /**
@@ -88,14 +88,14 @@ public abstract class SixtySevenTooltipInjection {
             // Reload the matrixStack to normal.
             matrixStack.loadIdentity();
         }
-        TICKER = MathHelper.floorMod((TICKER + SepClient.DELTA_TIME / 10), LIGHT_VALUE); // use the stupid light value, cause it's big as fuck
+        TICKER = MathHelper.floorMod((TICKER + SepGlobalClientConstants.DELTA_TIME / 10), LIGHT_VALUE); // use the stupid light value, cause it's big as fuck
     }
 
     @Mixin(Screen.class)
     public static class ScreenInjection {
         @Inject(at = @At("TAIL"), method = "render")
         public void renderInjection(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci) {
-            SepClient.DELTA_TIME = delta;
+            SepGlobalClientConstants.DELTA_TIME = delta;
         }
     }
 }

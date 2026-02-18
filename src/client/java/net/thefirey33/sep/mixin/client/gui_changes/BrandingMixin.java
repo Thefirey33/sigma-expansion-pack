@@ -13,8 +13,8 @@ import net.minecraft.client.gui.LogoDrawer;
 import net.minecraft.client.util.MonitorTracker;
 import net.minecraft.client.util.Window;
 import net.minecraft.util.Identifier;
-import net.thefirey33.sep.Sep;
-import net.thefirey33.sep.client.SepClient;
+import net.thefirey33.sep.client.SepGlobalClientConstants;
+import net.thefirey33.sep.SepGlobalConstants;
 import org.lwjgl.glfw.GLFW;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,9 +24,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LogoDrawer.class)
 public class BrandingMixin {
     @Shadow
-    public static final Identifier LOGO_TEXTURE = new Identifier(Sep.SEP_MOD_ID, "textures/gui/tuff_craft_logo.png");
+    public static final Identifier LOGO_TEXTURE = new Identifier(SepGlobalConstants.SEP_MOD_ID, "textures/gui/tuff_craft_logo.png");
     @Shadow
-    public static final Identifier EDITION_TEXTURE = new Identifier(Sep.SEP_MOD_ID, "textures/gui/tuff_craft_skibidi_edition.png");
+    public static final Identifier EDITION_TEXTURE = new Identifier(SepGlobalConstants.SEP_MOD_ID, "textures/gui/tuff_craft_skibidi_edition.png");
     @Unique
     private static final String CAPTION = "TUFFCraft Version 6.7";
 
@@ -39,14 +39,14 @@ public class BrandingMixin {
 
         @Inject(at = @At("TAIL"), method = "setTitle")
         public void setTitle(String title, CallbackInfo ci) {
-            GLFW.glfwSetWindowTitle(this.handle, "TUFFCraft Version 6.7 SHAREWARE EDITION %s".formatted(SepClient.IS_DEVELOPMENT ? "DEVELOPMENT MODE!!!" : ""));
+            GLFW.glfwSetWindowTitle(this.handle, "TUFFCraft Version 6.7 SHAREWARE EDITION %s".formatted(SepGlobalClientConstants.IS_DEVELOPMENT ? "DEVELOPMENT MODE!!!" : ""));
         }
 
 
         @Inject(at = @At(value = "INVOKE", target = "Lorg/lwjgl/glfw/GLFW;glfwMakeContextCurrent(J)V"), method = "<init>")
         public void retrieveWindowHandle(WindowEventHandler eventHandler, MonitorTracker monitorTracker, WindowSettings settings, String videoMode, String title, CallbackInfo ci) {
-            Sep.LOGGER.info("Retrieved Window Handle: {}", this.handle);
-            SepClient.WINDOW_HANDLE = this.handle;
+            SepGlobalConstants.LOGGER.info("Retrieved Window Handle: {}", this.handle);
+            SepGlobalClientConstants.WINDOW_HANDLE = this.handle;
         }
     }
 

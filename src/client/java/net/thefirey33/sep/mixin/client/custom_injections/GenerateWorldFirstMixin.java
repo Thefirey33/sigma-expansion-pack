@@ -12,7 +12,6 @@ import net.minecraft.client.gui.screen.world.CreateWorldScreen;
 import net.minecraft.client.network.ClientLoginNetworkHandler;
 import net.minecraft.client.realms.RealmsClient;
 import net.minecraft.client.report.ReporterEnvironment;
-import net.minecraft.client.util.Session;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.NetworkState;
 import net.minecraft.network.packet.c2s.handshake.HandshakeC2SPacket;
@@ -31,8 +30,8 @@ import net.minecraft.util.crash.CrashReport;
 import net.minecraft.util.crash.CrashReportSection;
 import net.minecraft.util.profiler.Profiler;
 import net.minecraft.world.level.storage.LevelStorage;
-import net.thefirey33.sep.Sep;
-import net.thefirey33.sep.client.SepClient;
+import net.thefirey33.sep.client.SepGlobalClientConstants;
+import net.thefirey33.sep.SepGlobalConstants;
 import net.thefirey33.sep.client.screens.DummyScreen;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.Nullable;
@@ -47,7 +46,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.time.Duration;
-import java.time.Instant;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Queue;
@@ -100,13 +98,13 @@ public abstract class GenerateWorldFirstMixin {
 
     @Inject(at = @At(value = "HEAD"), method = "onInitFinished", cancellable = true)
     public void onInitFinishedInjection(RealmsClient realms, ResourceReload reload, RunArgs.QuickPlay quickPlay, CallbackInfo ci) {
-        if (!SepClient.IS_DEVELOPMENT) {
+        if (!SepGlobalClientConstants.IS_DEVELOPMENT) {
             LevelStorage levelStorage = this.getLevelStorage();
 
             levelStorage.getLevelList().forEach(levelSave -> {
                 try {
                     Path path = levelSave.path();
-                    Sep.LOGGER.info("DELETING WORLD, CUZ ONLY ONESHOT: {}", path);
+                    SepGlobalConstants.LOGGER.info("DELETING WORLD, CUZ ONLY ONESHOT: {}", path);
                     FileUtils.deleteDirectory(path.toFile());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -131,7 +129,7 @@ public abstract class GenerateWorldFirstMixin {
          */
 
 
-        if (!SepClient.IS_DEVELOPMENT) {
+        if (!SepGlobalClientConstants.IS_DEVELOPMENT) {
             this.disconnect();
             this.setScreen(new TitleScreen(false));
             this.worldGenProgressTracker.set(null);
@@ -180,24 +178,24 @@ public abstract class GenerateWorldFirstMixin {
             }
             this.profiler.pop();
             assert this.server.getNetworkIo() != null;
-            SepClient.SERVER_ADDRESS = this.server.getNetworkIo().bindLocal();
+            SepGlobalClientConstants.SERVER_ADDRESS = this.server.getNetworkIo().bindLocal();
             ci.cancel();
         }
     }
 
     @Inject(at = @At("HEAD"), method = "render")
     public void ConnectToCreatedServer(boolean tick, CallbackInfo ci) {
-        if (SepClient.CONNECT_TO_CREATED_SERVER && !SepClient.IS_DEVELOPMENT) {
+        if (SepGlobalClientConstants.CONNECT_TO_CREATED_SERVER && !SepGlobalClientConstants.IS_DEVELOPMENT) {
             // Tell the client to connect to the integrated server.
             MinecraftClient client = MinecraftClient.getInstance();
-            ClientConnection clientConnection = ClientConnection.connectLocal(SepClient.SERVER_ADDRESS);
+            ClientConnection clientConnection = ClientConnection.connectLocal(SepGlobalClientConstants.SERVER_ADDRESS);
             clientConnection.setPacketListener(new ClientLoginNetworkHandler(clientConnection, client, null, null, true, Duration.ZERO, (status) -> {
             }));
-            clientConnection.send(new HandshakeC2SPacket(SepClient.SERVER_ADDRESS.toString(), 0, NetworkState.LOGIN));
+            clientConnection.send(new HandshakeC2SPacket(SepGlobalClientConstants.SERVER_ADDRESS.toString(), 0, NetworkState.LOGIN));
             clientConnection.send(new LoginHelloC2SPacket(client.getSession().getUsername(), Optional.ofNullable(client.getSession().getUuidOrNull())));
             this.integratedServerConnection = clientConnection;
-            SepClient.CONNECT_TO_CREATED_SERVER = false;
-            SepClient.ALREADY_WORLD_GENERATED = true;
+            SepGlobalClientConstants.CONNECT_TO_CREATED_SERVER = false;
+            SepGlobalClientConstants.ALREADY_WORLD_GENERATED = true;
         }
     }
 

@@ -10,12 +10,11 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.SepGlobalConstants;
 import net.thefirey33.sep.registries.ModBlocks;
 
 public class DiamondIdeaController implements ControllerInterface{
@@ -23,8 +22,8 @@ public class DiamondIdeaController implements ControllerInterface{
     public static final Integer DIAMOND_MAIN_RATE_LIMIT = 5000; // ticks
     public static final Integer AMOUNT_OF_DIAMONDS_TO_GIVE = 30;
 
-    public static final Identifier CHAT_MESSAGE_READER_IDENTIFIER = Identifier.of(Sep.SEP_MOD_ID, "chat-listener");
-    public static final Identifier TICK_IDENTIFIER = Identifier.of(Sep.SEP_MOD_ID, "rate-limit-ticker");
+    public static final Identifier CHAT_MESSAGE_READER_IDENTIFIER = Identifier.of(SepGlobalConstants.SEP_MOD_ID, "chat-listener");
+    public static final Identifier TICK_IDENTIFIER = Identifier.of(SepGlobalConstants.SEP_MOD_ID, "rate-limit-ticker");
     public static Integer DIAMOND_RATE_LIMIT = 0;
 
     @Override
@@ -47,7 +46,7 @@ public class DiamondIdeaController implements ControllerInterface{
                                         .withColor(Formatting.RED)
                                 )
                 );
-                Sep.LOGGER.info("Diamond Rate Limit: {}/{}", DIAMOND_MAIN_RATE_LIMIT, DIAMOND_RATE_LIMIT);
+                SepGlobalConstants.LOGGER.info("Diamond Rate Limit: {}/{}", DIAMOND_MAIN_RATE_LIMIT, DIAMOND_RATE_LIMIT);
             }
         });
         ServerTickEvents.START_SERVER_TICK.register(TICK_IDENTIFIER, minecraftServer -> DIAMOND_RATE_LIMIT = Math.max(0, DIAMOND_RATE_LIMIT - 1));

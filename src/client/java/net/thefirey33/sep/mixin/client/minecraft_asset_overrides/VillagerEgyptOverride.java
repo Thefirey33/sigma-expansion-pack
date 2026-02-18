@@ -1,13 +1,10 @@
-package net.thefirey33.sep.mixin.client.gui_changes;
+package net.thefirey33.sep.mixin.client.minecraft_asset_overrides;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.MerchantScreen;
 import net.minecraft.client.sound.SoundManager;
-import net.minecraft.text.Text;
 import net.thefirey33.sep.client.SoundInstances;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

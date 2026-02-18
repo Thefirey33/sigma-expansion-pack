@@ -4,8 +4,7 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.thefirey33.sep.Sep;
-import net.thefirey33.sep.networking.NetworkingRegistries;
+import net.thefirey33.sep.SepGlobalConstants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,11 +26,11 @@ public class IsPlayerHighUpInjection {
 
     @Unique
     public void SendPacket(ServerPlayerEntity serverPlayerEntity, Boolean valueToSet) {
-        assert NetworkingRegistries.START_PLAY_MUSIC_PACKET != null;
+        assert SepGlobalConstants.START_PLAY_MUSIC_PACKET != null;
         PacketByteBuf packetByteBuf = PacketByteBufs.create();
-        Sep.LOGGER.info("Making this biatch relaxed: {}.. SENDING PACKET", serverPlayerEntity.getName());
+        SepGlobalConstants.LOGGER.info("Making this biatch relaxed: {}.. SENDING PACKET", serverPlayerEntity.getName());
         packetByteBuf.writeBoolean(valueToSet);
-        ServerPlayNetworking.send(serverPlayerEntity, NetworkingRegistries.START_PLAY_MUSIC_PACKET, packetByteBuf);
+        ServerPlayNetworking.send(serverPlayerEntity, SepGlobalConstants.START_PLAY_MUSIC_PACKET, packetByteBuf);
     }
 
     @Inject(at = @At("TAIL"), method = "tick")

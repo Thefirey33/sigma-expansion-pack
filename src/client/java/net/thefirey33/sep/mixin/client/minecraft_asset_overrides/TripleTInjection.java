@@ -4,7 +4,7 @@
  */
 
 
-package net.thefirey33.sep.mixin.client.custom_injections;
+package net.thefirey33.sep.mixin.client.minecraft_asset_overrides;
 
 import net.minecraft.client.resource.metadata.AnimationResourceMetadata;
 import net.minecraft.client.texture.NativeImage;
@@ -15,6 +15,7 @@ import net.minecraft.resource.Resource;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.SepGlobalConstants;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -33,7 +34,7 @@ public class TripleTInjection {
     private static final String TEXTURE_DATA_PATH = "texture_override/%s.png";
     /**
      * @author Thefirey33
-     * @reason Overwrite the loader, so i can mess with it and turn it into tung tung tung sahur.
+     * @reason Overwrite the loader, so I can mess with it and turn it into tung tung tung sahur.
      */
     @Overwrite
     public static @Nullable SpriteContents load(Identifier id, Resource resource){
@@ -42,7 +43,7 @@ public class TripleTInjection {
         try {
             animationResourceMetadata = resource.getMetadata().decode(AnimationResourceMetadata.READER).orElse(AnimationResourceMetadata.EMPTY);
         } catch (Exception var8) {
-            Sep.LOGGER.error("Unable to parse metadata from {}", (Object)id);
+            SepGlobalConstants.LOGGER.error("Unable to parse metadata from {}", (Object)id);
             return null;
         }
 
@@ -54,7 +55,7 @@ public class TripleTInjection {
                 // Override the item loader.
                 String pathInformation = TEXTURE_DATA_PATH.formatted(id.getPath());
                 inputStream = Sep.class.getClassLoader().getResourceAsStream(pathInformation);
-                Sep.LOGGER.info("Importing sprite {} as TRIPLE T BABEH.", id);
+                SepGlobalConstants.LOGGER.info("Importing sprite {} as TRIPLE T BABEH.", id);
             }
             else
                 inputStream = resource.getInputStream();
@@ -77,7 +78,7 @@ public class TripleTInjection {
 
             inputStream.close();
         } catch (IOException var10) {
-            Sep.LOGGER.error("Using missing texture, unable to load {}", (Object)id);
+            SepGlobalConstants.LOGGER.error("Using missing texture, unable to load {}", (Object)id);
             return null;
         }
 
@@ -85,7 +86,7 @@ public class TripleTInjection {
         if (MathHelper.isMultipleOf(nativeImage.getWidth(), spriteDimensions.width()) && MathHelper.isMultipleOf(nativeImage.getHeight(), spriteDimensions.height())) {
             return new SpriteContents(id, spriteDimensions, nativeImage, animationResourceMetadata);
         } else {
-            Sep.LOGGER.error("Image {} size {},{} is not multiple of frame size {},{}", id, nativeImage.getWidth(), nativeImage.getHeight(), spriteDimensions.width(), spriteDimensions.height());
+            SepGlobalConstants.LOGGER.error("Image {} size {},{} is not multiple of frame size {},{}", id, nativeImage.getWidth(), nativeImage.getHeight(), spriteDimensions.width(), spriteDimensions.height());
             nativeImage.close();
             return null;
         }

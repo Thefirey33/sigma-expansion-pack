@@ -5,7 +5,7 @@
  */
 
 
-package net.thefirey33.sep.client.vessel_screen_dialogue_manager;
+package net.thefirey33.sep.client.vessel;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
@@ -20,12 +20,9 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.LocalRandom;
-import net.thefirey33.sep.Sep;
-import net.thefirey33.sep.client.SepClient;
+import net.thefirey33.sep.client.SepGlobalClientConstants;
 import net.thefirey33.sep.registries.ModSounds;
-import net.thefirey33.sep.client.dialogue_loaders.BeginningGasterLoader;
 import org.lwjgl.glfw.GLFW;
-import org.spongepowered.asm.mixin.Unique;
 
 // This class was added because the variable list in the actual DeltaruneVesselSelectScreen was getting huge.
 public class VesselSelectScreenDialogueManager {
@@ -123,7 +120,7 @@ public class VesselSelectScreenDialogueManager {
                 minecraftClient.getMusicTracker().stop();
             }
 
-            GLFW.glfwSetWindowPos(SepClient.WINDOW_HANDLE, WindowPositionX + (int) (Math.random() * (TRANSITION_START * 100)), WindowPositionY + (int) (Math.random() * (TRANSITION_START * 100)));
+            GLFW.glfwSetWindowPos(SepGlobalClientConstants.WINDOW_HANDLE, WindowPositionX + (int) (Math.random() * (TRANSITION_START * 100)), WindowPositionY + (int) (Math.random() * (TRANSITION_START * 100)));
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, TRANSITION_START);
             RenderSystem.enableBlend();
             drawContext.fill(0, 0, currentScreenInstance.width, currentScreenInstance.height, Colors.WHITE);
@@ -131,7 +128,7 @@ public class VesselSelectScreenDialogueManager {
 
             // Check if the transition sound has stopped playing.
             if (!soundManager.isPlaying(TRANSITION_INSTANCE)) {
-                GLFW.glfwSetWindowPos(SepClient.WINDOW_HANDLE, WindowPositionX, WindowPositionY);
+                GLFW.glfwSetWindowPos(SepGlobalClientConstants.WINDOW_HANDLE, WindowPositionX, WindowPositionY);
                 return true;
             }
 

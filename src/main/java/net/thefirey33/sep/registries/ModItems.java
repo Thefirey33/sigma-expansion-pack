@@ -10,7 +10,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.thefirey33.sep.Sep;
+import net.thefirey33.sep.SepGlobalConstants;
 import net.thefirey33.sep.materials.SigmaArmorMaterial;
 import net.thefirey33.sep.materials.SigmaMaterial;
 
@@ -41,7 +41,7 @@ public class ModItems {
     public static final Item SIGMA_CHESTPLATE = register(new ArmorItem(SigmaArmorMaterial.INSTANCE, ArmorItem.Type.CHESTPLATE, new Item.Settings()), "sigma_chestplate");
 
     public static Item register(Item item, String id) {
-        Identifier itemID = Identifier.of(Sep.SEP_MOD_ID, id);
+        Identifier itemID = Identifier.of(SepGlobalConstants.SEP_MOD_ID, id);
         return Registry.register(Registries.ITEM, itemID, item);
     }
 
