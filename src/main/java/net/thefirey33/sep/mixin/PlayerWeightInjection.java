@@ -52,6 +52,7 @@ public class PlayerWeightInjection {
         World world = playerEntity.getWorld();
         MinecraftServer server = world.getServer();
 
+        // FIXME: Sync the data of the NBT with the server properly.
         if (server != null && Thread.currentThread() == server.getThread()) {
             this.Weight = Math.max(0, this.Weight - server.getTickTime() / WEIGHT_REMOVAL_MULTIPLIER);
             SepGlobalConstants.LOGGER.info(String.valueOf(this.Weight));
